@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>2L-PROD | Studio de Composition Professionnelle</title>
 
-    <!-- Meta tags pour le partage social (Open Graph) -->
+    <!-- Meta tags pour le partage social -->
     <meta property="og:title" content="2L-PROD | Studio JD Beat">
     <meta property="og:description" content="Beats professionnels, Mixage & Mastering. Écoutez les dernières compositions de JD Beat.">
     <meta property="og:image" content="https://jdbeat243.github.io/2L-PROD/preview.jpg">
@@ -13,7 +13,6 @@
     <meta property="og:type" content="website">
     <meta name="description" content="Services de beatmaking et mixage professionnel par JD Beat.">
 
-    <!-- BALISE DE VERIFICATION GOOGLE SEARCH CONSOLE -->
     <meta name="google-site-verification" content="uZHsaDSvH3YbDS-zj91k6ueun3srqmDYe4te1EbmlhI" />
 
     <style>
@@ -31,44 +30,29 @@
         body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
         .container { max-width: 900px; margin: auto; padding: 20px; }
 
-        /* Branding */
         header { text-align: center; padding: 40px 0; }
         .logo { font-size: 3rem; font-weight: 900; letter-spacing: -2px; text-transform: uppercase; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Producer Badge */
-        .producer-badge {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            border: 1px solid var(--primary);
-            padding: 15px 30px;
-            border-radius: 50px;
-            display: inline-block;
-            margin: 20px 0;
-        }
+        .producer-badge { background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%); border: 1px solid var(--primary); padding: 15px 30px; border-radius: 50px; display: inline-block; margin: 20px 0; }
         .producer-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); font-weight: bold; }
         .producer-name { font-size: 1.2rem; font-weight: 700; margin-top: 2px; }
 
-        /* Sections */
         .section-title { font-size: 1.8rem; margin: 50px 0 30px; display: flex; align-items: center; gap: 15px; }
         .section-title::after { content: ""; flex-grow: 1; height: 1px; background: var(--border); }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { background: var(--surface); border: 1px solid var(--border); padding: 25px; border-radius: 20px; transition: 0.3s; margin-bottom: 10px; }
         .card:hover { border-color: var(--primary); transform: translateY(-5px); }
 
-        /* Vidéo Wrapper */
         .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 15px; }
         .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; border: 0; }
         
-        /* Buttons */
         .btn { display: block; text-align: center; background: var(--primary); color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s; margin-top: 15px; }
         .btn:hover { background: var(--primary-light); transform: scale(1.02); }
         .btn-outline { background: transparent; border: 1px solid var(--border); color: white; }
         .btn-outline:hover { border-color: var(--primary); }
 
-        /* Lists for Licences */
         .card ul { list-style: none; color: var(--text-dim); margin: 15px 0; }
         .card ul li { margin-bottom: 8px; font-size: 0.95rem; }
-
-        /* Badges */
         .badge-container { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-top: 20px; }
         .badge { background: var(--border); padding: 6px 14px; border-radius: 20px; font-size: 0.8rem; color: var(--text-dim); font-weight: 500; }
     </style>
@@ -78,16 +62,13 @@
 <div class="container">
     <header>
         <h1 class="logo">2L-PROD</h1>
-        
         <div class="producer-badge">
             <div class="producer-label">Producteur</div>
             <div class="producer-name">JD Beat</div>
         </div>
-
         <p class="tagline">Beats Haut de Gamme & Solutions de Mixage Internationales</p>
     </header>
 
-    <!-- SECTION CATALOGUE -->
     <h2 class="section-title">Catalogue Exclusif</h2>
     <div class="grid">
         <div class="card">
@@ -105,15 +86,14 @@
             </div>
             <h3>Prochainement...</h3>
             <p style="color:var(--text-dim); margin: 5px 0;">Nouvelles compositions originales et prods.</p>
-            <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20préviens-moi%20quand%20les%20prochains%20beats%20seront%20disponibles%20!" class="btn btn-outline">Être alerté</a>
+            <!-- LE BOUTON EST ICI -->
+            <a href="https://youtube.com/@jdofficiel243?si=chvtzqJgJSmztpwc" target="_blank" class="btn btn-outline">Être alerté</a>
         </div>
     </div>
 
-    <!-- SECTION COLLABORATIONS & TRAVAUX -->
     <h2 class="section-title">Collaborations & Projets</h2>
     <div class="card" style="text-align: center;">
         <p>Studio spécialisé dans la composition, la réalisation de projets artistiques et l'accompagnement des artistes indépendants.</p>
-        
         <div class="badge-container">
             <span class="badge">Rumba</span>
             <span class="badge">Afrobeat</span>
@@ -124,7 +104,6 @@
         </div>
     </div>
 
-    <!-- SECTION TARIFS & LICENCES COMPLÈTE -->
     <h2 class="section-title">Licences & Tarifs</h2>
     <div class="grid">
         <div class="card">
@@ -132,33 +111,29 @@
             <p style="font-size: 1.6rem; font-weight: 700; margin: 10px 0; color: var(--primary);">Sur Devis</p>
             <ul>
                 <li>✓ Fichiers WAV Haute Qualité 24-bit</li>
-                <li>✓ Pistes séparées (Stems) pour mixage studio</li>
-                <li>✓ Droits d'exploitation commerciale inclus</li>
-                <li>✓ Idéal pour les singles professionnels et clips</li>
+                <li>✓ Pistes séparées (Stems) pour mixage</li>
+                <li>✓ Droits d'exploitation commerciale</li>
             </ul>
-            <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20je%20souhaite%20avoir%20les%20tarifs%20et%20un%20devis%20pour%20une%20Licence%20Pro%20(WAV)." class="btn btn-outline">Contacter</a>
+            <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20je%20souhaite%20un%20devis%20pour%20une%20Licence%20Pro." class="btn btn-outline">Contacter</a>
         </div>
-        
         <div class="card">
             <h3>Licence Exclusive</h3>
             <p style="font-size: 1.6rem; font-weight: 700; margin: 10px 0; color: var(--primary);">Négociable</p>
             <ul>
-                <li>✓ Propriété exclusive et totale de l'œuvre</li>
-                <li>✓ Le beat est immédiatement retiré de la vente</li>
-                <li>✓ Fichiers sources complets (WAV + Stems)</li>
-                <li>✓ Support et modifications sur mesure 24/7</li>
+                <li>✓ Propriété totale de l'œuvre</li>
+                <li>✓ Beat retiré de la vente</li>
+                <li>✓ Fichiers sources complets</li>
             </ul>
-            <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20je%20souhaite%20négocier%20les%20droits%20Exclusifs%20d'un%20beat%20sur%20ton%20site." class="btn">Négocier les Droits</a>
+            <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20je%20souhaite%20négocier%20les%20droits%20Exclusifs." class="btn">Négocier</a>
         </div>
     </div>
 
-    <!-- SECTION CONTACT -->
     <h2 class="section-title">Me contacter</h2>
     <div class="card">
-        <p>Une question pour une production personnalisée, une demande de mixage ou une collaboration ? Je réponds rapidement à toutes vos requêtes.</p>
+        <p>Une question pour une production personnalisée, un mixage ou une collaboration ?</p>
         <div style="margin-top: 20px; display:flex; flex-direction:column; gap: 12px;">
-            <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20je%20te%20contacte%20depuis%20ton%20site%202L-PROD%20pour%20discuter%20d'un%20projet%20musical." class="btn">💬 Échanger sur WhatsApp</a>
-            <a href="mailto:jdapotre@gmail.com" class="btn btn-outline">📧 Envoyer un e-mail (jdapotre@gmail.com)</a>
+            <a href="https://wa.me/243844633415" class="btn">💬 Échanger sur WhatsApp</a>
+            <a href="mailto:jdapotre@gmail.com" class="btn btn-outline">📧 jdapotre@gmail.com</a>
         </div>
     </div>
 
@@ -166,6 +141,5 @@
         &copy; 2026 2L-PROD - Beatmaking & Studio Services
     </footer>
 </div>
-
 </body>
 </html>
