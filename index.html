@@ -20,9 +20,20 @@
         .container { max-width: 900px; margin: auto; padding: 20px; }
 
         /* Branding */
-        header { text-align: center; padding: 60px 0; }
+        header { text-align: center; padding: 40px 0; }
         .logo { font-size: 3rem; font-weight: 900; letter-spacing: -2px; text-transform: uppercase; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .tagline { color: var(--text-dim); margin-top: 10px; font-size: 1.1rem; }
+        
+        /* NEW: Producer Badge */
+        .producer-badge {
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            border: 1px solid var(--primary);
+            padding: 15px 30px;
+            border-radius: 50px;
+            display: inline-block;
+            margin: 20px 0;
+        }
+        .producer-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 2px; color: var(--primary); font-weight: bold; }
+        .producer-name { font-size: 1.2rem; font-weight: 700; margin-top: 2px; }
 
         /* Sections */
         .section-title { font-size: 1.8rem; margin: 50px 0 30px; display: flex; align-items: center; gap: 15px; }
@@ -50,6 +61,13 @@
 <div class="container">
     <header>
         <h1 class="logo">2L-PROD</h1>
+        
+        <!-- Ta nouvelle case -->
+        <div class="producer-badge">
+            <div class="producer-label">Producteur</div>
+            <div class="producer-name">JD Beat</div>
+        </div>
+
         <p class="tagline">Beats Haut de Gamme & Solutions de Mixage Internationales</p>
     </header>
 
@@ -63,14 +81,14 @@
             <a href="https://wa.me/243844633415" class="btn">Acheter ce Beat</a>
         </div>
         <div class="card">
-            <div class="video-wrapper" style="background:#1a1a1a; display:flex; align-items:center; justify-content:center;"><span>Chargement du beat...</span></div>
-            <h3>Afrobeat - "Titre à venir"</h3>
-            <p style="color:var(--text-dim); margin: 10px 0;">Vibe estivale & percussion pro.</p>
-            <a href="https://wa.me/243844633415" class="btn">Acheter ce Beat</a>
+            <div class="video-wrapper" style="background:#1a1a1a; display:flex; align-items:center; justify-content:center;"><span>Catalogue en expansion...</span></div>
+            <h3>Prochainement...</h3>
+            <p style="color:var(--text-dim); margin: 10px 0;">Nouvelles vibes Afro & Rumba.</p>
+            <a href="https://wa.me/243844633415" class="btn btn-outline">Être alerté</a>
         </div>
     </div>
 
-    <!-- NOUVEAU: PORTFOLIO / PREUVE SOCIALE -->
+    <!-- PORTFOLIO -->
     <h2 class="section-title">Collaborations</h2>
     <div class="card" style="text-align: center;">
         <p>J'ai eu le plaisir de travailler sur des projets pour plusieurs artistes émergents et établis.</p>
