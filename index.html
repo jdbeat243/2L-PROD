@@ -3,576 +3,123 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>2L-PROD | Beats de Qualité Supérieure</title>
+    <title>2L-PROD | Studio de Composition Professionnelle</title>
     <style>
-        /* Variables de couleur et styles globaux */
         :root {
-            --primary-color: #ff5e00;
-            --primary-hover: #e05200;
-            --bg-dark: #0a0a0a;
-            --card-bg: #121212;
-            --border-color: #1f1f1f;
-            --text-main: #ffffff;
-            --text-muted: #8e8e93;
+            --primary: #ff5e00;
+            --primary-light: #ff7826;
+            --bg: #050505;
+            --surface: #0f0f0f;
+            --border: #1a1a1a;
+            --text: #ffffff;
+            --text-dim: #a0a0a0;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'Inter', -apple-system, sans-serif; background-color: var(--bg); color: var(--text); line-height: 1.6; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
 
-        body { 
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; 
-            background-color: var(--bg-dark); 
-            color: var(--text-main); 
-            line-height: 1.5;
-            padding: 40px 20px;
-        }
+        /* Branding */
+        header { text-align: center; padding: 60px 0; }
+        .logo { font-size: 3rem; font-weight: 900; letter-spacing: -2px; text-transform: uppercase; background: linear-gradient(to right, #fff, var(--primary)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .tagline { color: var(--text-dim); margin-top: 10px; font-size: 1.1rem; }
 
-        .container {
-            max-width: 800px;
-            margin: auto;
-        }
+        /* Sections */
+        .section-title { font-size: 1.8rem; margin: 50px 0 30px; display: flex; align-items: center; gap: 15px; }
+        .section-title::after { content: ""; flex-grow: 1; height: 1px; background: var(--border); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: var(--surface); border: 1px solid var(--border); padding: 25px; border-radius: 20px; transition: 0.3s; }
+        .card:hover { border-color: var(--primary); transform: translateY(-5px); }
 
-        /* --- EN-TÊTE / BRANDING --- */
-        header {
-            margin-bottom: 40px;
-            text-align: center;
-        }
+        /* Beats & Players */
+        .video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; margin-bottom: 15px; }
+        .video-wrapper iframe { position: absolute; top:0; left:0; width:100%; height:100%; }
 
-        .logo-wrapper {
-            display: flex;
-            flex-direction: column; /* Empile sur mobile */
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            margin-bottom: 15px;
-        }
+        /* Buttons */
+        .btn { display: block; text-align: center; background: var(--primary); color: white; padding: 15px; border-radius: 12px; text-decoration: none; font-weight: 700; transition: 0.3s; }
+        .btn:hover { background: var(--primary-light); transform: scale(1.02); }
+        .btn-outline { background: transparent; border: 1px solid var(--border); color: white; }
+        .btn-outline:hover { border-color: var(--primary); }
 
-        @media(min-width: 600px) {
-            .logo-wrapper {
-                flex-direction: row; /* Côte à côte sur ordinateur */
-            }
-        }
-
-        .logo-text {
-            font-size: 2.5rem;
-            font-weight: 900;
-            letter-spacing: -1px;
-            background: linear-gradient(135deg, #ffffff 30%, var(--primary-color) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            text-transform: uppercase;
-            white-space: nowrap; /* Empêche le mot de se couper */
-        }
-
-        @media(min-width: 600px) {
-            .logo-text {
-                font-size: 3.2rem;
-            }
-        }
-
-        .badge-pro {
-            background-color: rgba(255, 94, 0, 0.12);
-            color: var(--primary-color);
-            padding: 5px 12px;
-            font-size: 0.75rem;
-            font-weight: bold;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 94, 0, 0.25);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-        }
-
-        .tagline {
-            font-size: 1.1rem; 
-            color: var(--text-muted);
-            max-width: 550px;
-            margin: 0 auto 15px auto;
-        }
-
-        .genres {
-            font-size: 0.85rem;
-            color: var(--primary-color);
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-        }
-
-        /* --- RUBAN D'AVANTAGES --- */
-        .features-ribbon {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 15px;
-            margin: 35px 0;
-            border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
-            padding: 20px 0;
-        }
-
-        .feature-item {
-            text-align: center;
-        }
-
-        .feature-icon {
-            font-size: 1.4rem;
-            margin-bottom: 6px;
-        }
-
-        .feature-text {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            font-weight: 500;
-        }
-
-        @media(max-width: 500px) {
-            .features-ribbon {
-                grid-template-columns: 1fr;
-                gap: 20px;
-            }
-        }
-
-        /* --- TITRES DE SECTION --- */
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin: 45px 0 25px 0;
-            position: relative;
-            padding-left: 15px;
-        }
-
-        .section-title::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 15%;
-            height: 70%;
-            width: 4px;
-            background-color: var(--primary-color);
-            border-radius: 2px;
-        }
-
-        .card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            margin-bottom: 25px;
-        }
-
-        /* --- CATALOGUE DE BEATS --- */
-        .beats-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 25px;
-        }
-
-        @media(min-width: 650px) {
-            .beats-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-
-        .player-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 16px;
-            transition: all 0.3s ease;
-        }
-
-        .player-card:hover {
-            transform: translateY(-4px);
-            border-color: rgba(255, 94, 0, 0.4);
-        }
-
-        .player-title {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 12px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-
-        .video-container {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            overflow: hidden;
-            border-radius: 10px;
-            background-color: #000;
-        }
-
-        .video-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
-        /* --- PROCESSUS (COMMENT CA MARCHE) --- */
-        .process-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        @media(min-width: 600px) {
-            .process-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .process-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 20px;
-            text-align: center;
-        }
-
-        .step-num {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            display: block;
-        }
-
-        .process-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 8px;
-        }
-
-        .process-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* --- LICENCES / TARIFS --- */
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 20px;
-        }
-
-        .price-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 16px;
-            padding: 25px;
-            transition: all 0.3s ease;
-        }
-
-        .price-card:hover {
-            border-color: var(--primary-color);
-        }
-
-        .price-card.exclusive {
-            border: 1.5px dashed var(--primary-color);
-            background: linear-gradient(180deg, var(--card-bg) 0%, rgba(255, 94, 0, 0.02) 100%);
-        }
-
-        .price-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 15px;
-        }
-
-        .price-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-        }
-
-        .price-value {
-            font-size: 1.5rem;
-            font-weight: 800;
-            color: var(--primary-color);
-        }
-
-        .price-features {
-            list-style: none;
-            margin-bottom: 25px;
-        }
-
-        .price-features li {
-            font-size: 0.95rem;
-            color: #d1d1d6;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-
-        .price-features li::before {
-            content: "✓";
-            color: var(--primary-color);
-            font-weight: bold;
-        }
-
-        /* --- FAQ --- */
-        .faq-item {
-            margin-bottom: 20px;
-        }
-
-        .faq-item:last-child {
-            margin-bottom: 0;
-        }
-
-        .faq-q {
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #fff;
-        }
-
-        .faq-a {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* --- BOUTONS --- */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            background: var(--primary-color);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 12px 24px;
-            border-radius: 40px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transition: all 0.2s ease;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-        }
-
-        .btn:hover {
-            background: var(--primary-hover);
-            transform: scale(1.01);
-        }
-
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary-color);
-            color: var(--primary-color);
-        }
-
-        .btn-outline:hover {
-            background: var(--primary-color);
-            color: #ffffff;
-        }
-
-        .email-link {
-            display: inline-block;
-            margin-top: 15px;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: color 0.2s;
-        }
-
-        .email-link:hover {
-            color: var(--primary-color);
-        }
-
-        /* --- FOOTER --- */
-        footer {
-            margin-top: 60px;
-            color: var(--text-muted);
-            font-size: 0.85rem;
-            text-align: center;
-        }
-
-        footer a {
-            color: var(--text-muted);
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-
-        footer a:hover {
-            color: var(--primary-color);
-        }
+        /* Portfolio / Crédits */
+        .badge { background: var(--border); padding: 4px 12px; border-radius: 20px; font-size: 0.8rem; color: var(--text-dim); }
     </style>
 </head>
 <body>
-    <div class="container">
-        
-        <!-- EN-TÊTE / BRANDING -->
-        <header>
-            <div class="logo-wrapper">
-                <span class="logo-text">2L-Prod</span>
-                <span class="badge-pro">Pro compositions</span>
-            </div>
-            <p class="tagline">Compositions originales haut de gamme & Solutions de mixage de niveau international.</p>
-            <p class="genres">Drill • Afrobeat • Trap • Rumba</p>
-        </header>
 
-        <!-- RUBAN D'AVANTAGES -->
-        <div class="features-ribbon">
-            <div class="feature-item">
-                <div class="feature-icon">⚡</div>
-                <div class="feature-text">Livraison Instantanée</div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">🎛️</div>
-                <div class="feature-text">Qualité Mixage Studio</div>
-            </div>
-            <div class="feature-item">
-                <div class="feature-icon">📜</div>
-                <div class="feature-text">Contrats de Licence Clairs</div>
-            </div>
+<div class="container">
+    <header>
+        <h1 class="logo">2L-PROD</h1>
+        <p class="tagline">Beats Haut de Gamme & Solutions de Mixage Internationales</p>
+    </header>
+
+    <!-- SECTION BEATS -->
+    <h2 class="section-title">Catalogue Exclusif</h2>
+    <div class="grid">
+        <div class="card">
+            <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/iy49BpDNVLc"></iframe></div>
+            <h3>Drill - "Video Games"</h3>
+            <p style="color:var(--text-dim); margin: 10px 0;">Hard hitting, dark atmosphere.</p>
+            <a href="https://wa.me/243844633415" class="btn">Acheter ce Beat</a>
         </div>
-
-        <!-- SECTION CATALOGUE DE BEATS -->
-        <section class="catalog-section">
-            <h2 class="section-title">Catalogue de Beats</h2>
-            <div class="beats-grid">
-                
-                <!-- BEAT 1 (Video Games) -->
-                <div class="player-card">
-                    <div class="player-title">🕹️ Drill - Video Games</div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/iy49BpDNVLc" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-                <!-- BEAT 2 (À configurer) -->
-                <div class="player-card">
-                    <div class="player-title">🔥 Afrobeat / Rumba</div>
-                    <div class="video-container">
-                        <iframe src="https://www.youtube.com/embed/CODE_ICI_2" allowfullscreen></iframe>
-                    </div>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION COMMENT ÇA MARCHE (PROCESSUS) -->
-        <section>
-            <h2 class="section-title">Comment ça marche ?</h2>
-            <div class="process-grid">
-                <div class="process-card">
-                    <span class="step-num">01</span>
-                    <h3>Sélection</h3>
-                    <p>Parcourez le catalogue et choisissez l'instrumental qui correspond à votre projet.</p>
-                </div>
-                <div class="process-card">
-                    <span class="step-num">02</span>
-                    <h3>Contact & Paiement</h3>
-                    <p>Discutons sur WhatsApp ou par e-mail pour convenir du tarif et de la licence voulue.</p>
-                </div>
-                <div class="process-card">
-                    <span class="step-num">03</span>
-                    <h3>Livraison</h3>
-                    <p>Dès confirmation, recevez vos fichiers haute qualité (WAV/MP3) sous 24 heures.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION TARIFS & LICENCES -->
-        <section class="pricing-section">
-            <h2 class="section-title">Licences & Options d'Achat</h2>
-            <div class="pricing-grid">
-                
-                <!-- Licence MP3 -->
-                <div class="price-card">
-                    <div class="price-header">
-                        <h3 class="price-title">Licence Standard (MP3)</h3>
-                        <div class="price-value">Sur Devis</div>
-                    </div>
-                    <ul class="price-features">
-                        <li>Fichier MP3 de haute qualité (320kbps)</li>
-                        <li>Autorisé pour les plateformes de streaming</li>
-                        <li>Contrat d'autorisation d'usage commercial</li>
-                    </ul>
-                    <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20je%20suis%20intéressé%20par%20la%20Licence%20Standard%20(MP3)%20pour%20un%20de%20tes%20beats." class="btn btn-outline" target="_blank">
-                        <span>Acheter la licence MP3</span>
-                    </a>
-                </div>
-
-                <!-- Licence WAV -->
-                <div class="price-card">
-                    <div class="price-header">
-                        <h3 class="price-title">Licence Professionnelle (WAV)</h3>
-                        <div class="price-value">Sur Devis</div>
-                    </div>
-                    <ul class="price-features">
-                        <li>Fichier WAV Master 24-bit non-compressé</li>
-                        <li>Pistes séparées (Stems) disponibles sur demande</li>
-                        <li>Optimisé pour un mixage et mastering parfaits</li>
-                    </ul>
-                    <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20je%20suis%20intéressé%20par%20la%20Licence%20Pro%20(WAV)%20pour%20un%20de%20tes%20beats." class="btn btn-outline" target="_blank">
-                        <span>Acheter la licence WAV</span>
-                    </a>
-                </div>
-
-                <!-- Licence Exclusive -->
-                <div class="price-card exclusive">
-                    <div class="price-header">
-                        <h3 class="price-title" style="color: var(--primary-color);">Licence Exclusive</h3>
-                        <div class="price-value">Négociable</div>
-                    </div>
-                    <ul class="price-features">
-                        <li>Vous devenez l'unique propriétaire de l'œuvre</li>
-                        <li>Le beat est définitivement retiré de la vente et de YouTube</li>
-                        <li>Fichiers WAV + Pistes séparées (Stems) inclus</li>
-                        <li>Droits d'exploitation commerciale illimités</li>
-                    </ul>
-                    <a href="https://wa.me/243844633415?text=Salut%20JD%20Beat,%20j'aimerais%20discuter%20de%20l'achat%20exclusif%20d'un%20de%20tes%20beats." class="btn" target="_blank">
-                        <span>Négocier l'exclusivité</span>
-                    </a>
-                </div>
-
-            </div>
-        </section>
-
-        <!-- SECTION FAQ -->
-        <section>
-            <h2 class="section-title">Foire Aux Questions (FAQ)</h2>
-            <div class="card">
-                <div class="faq-item">
-                    <p class="faq-q">Quels sont les moyens de paiement acceptés ?</p>
-                    <p class="faq-a">J'accepte principalement le Mobile Money (M-Pesa, Orange Money, Airtel Money) ainsi que PayPal pour les règlements internationaux.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Quel est le délai de livraison des fichiers ?</p>
-                    <p class="faq-a">Une fois le paiement validé, les liens de téléchargement sécurisés (WeTransfer ou Google Drive) vous sont transmis en moins de 24 heures.</p>
-                </div>
-                <div class="faq-item">
-                    <p class="faq-q">Puis-je demander des modifications sur un beat ?</p>
-                    <p class="faq-a">Tout à fait. Si vous avez besoin de structurer l'instrumental autrement ou d'ajuster certains éléments, nous pouvons en discuter lors de la commande.</p>
-                </div>
-            </div>
-        </section>
-
-        <!-- SECTION CONTACT & EMAIL -->
-        <section class="card" style="text-align: center; margin-top: 40px; padding: 35px 20px;">
-            <h3>Discutons de votre prochain projet</h3>
-            <p style="margin-bottom: 25px; color: var(--text-muted);">Une demande de composition sur-mesure ou un projet de mixage ? Je suis à votre écoute.</p>
-            <a href="https://wa.me/243844633415" class="btn" style="max-width: 280px; margin: auto;" target="_blank">💬 WhatsApp</a>
-            <div style="margin-top: 15px;">
-                <a href="mailto:jdapotre@gmail.com" class="email-link">📧 jdapotre@gmail.com</a>
-            </div>
-        </section>
-
-        <!-- PIED DE PAGE -->
-        <footer>
-            <p>&copy; 2026 2L-PROD. Tous droits réservés.</p>
-            <p style="margin-top: 10px;"><a href="https://www.youtube.com/@jdbeat243" target="_blank">Chaîne YouTube Officielle</a></p>
-        </footer>
-
+        <div class="card">
+            <div class="video-wrapper" style="background:#1a1a1a; display:flex; align-items:center; justify-content:center;"><span>Chargement du beat...</span></div>
+            <h3>Afrobeat - "Titre à venir"</h3>
+            <p style="color:var(--text-dim); margin: 10px 0;">Vibe estivale & percussion pro.</p>
+            <a href="https://wa.me/243844633415" class="btn">Acheter ce Beat</a>
+        </div>
     </div>
+
+    <!-- NOUVEAU: PORTFOLIO / PREUVE SOCIALE -->
+    <h2 class="section-title">Collaborations</h2>
+    <div class="card" style="text-align: center;">
+        <p>J'ai eu le plaisir de travailler sur des projets pour plusieurs artistes émergents et établis.</p>
+        <div style="margin-top: 20px;">
+            <span class="badge">Mixage & Mastering</span>
+            <span class="badge">Composition Originale</span>
+            <span class="badge">Sound Design</span>
+        </div>
+    </div>
+
+    <!-- TARIFS -->
+    <h2 class="section-title">Licences</h2>
+    <div class="grid">
+        <div class="card">
+            <h3>Licence Pro (WAV)</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; margin: 10px 0;">Sur Devis</p>
+            <ul style="list-style: none; color: var(--text-dim); margin-bottom: 20px;">
+                <li>✓ Fichiers WAV 24-bit</li>
+                <li>✓ Pistes séparées (Stems)</li>
+                <li>✓ Droits commerciaux</li>
+            </ul>
+            <a href="https://wa.me/243844633415" class="btn btn-outline">Contacter</a>
+        </div>
+        <div class="card">
+            <h3>Exclusive</h3>
+            <p style="font-size: 1.5rem; font-weight: 700; margin: 10px 0;">Négociable</p>
+            <ul style="list-style: none; color: var(--text-dim); margin-bottom: 20px;">
+                <li>✓ Propriété Totale</li>
+                <li>✓ Retiré de la vente</li>
+                <li>✓ Support 24/7</li>
+            </ul>
+            <a href="https://wa.me/243844633415" class="btn">Négocier</a>
+        </div>
+    </div>
+
+    <!-- CONTACT -->
+    <h2 class="section-title">Me contacter</h2>
+    <div class="card">
+        <p>Une question ? Un projet de mixage ? Je réponds à tous les messages dans les plus brefs délais.</p>
+        <div style="margin-top: 20px; display:flex; flex-direction:column; gap: 10px;">
+            <a href="https://wa.me/243844633415" class="btn">💬 WhatsApp</a>
+            <a href="mailto:jdapotre@gmail.com" class="btn btn-outline">📧 jdapotre@gmail.com</a>
+        </div>
+    </div>
+
+    <footer style="text-align: center; margin-top: 60px; color: var(--text-dim); font-size: 0.9rem;">
+        &copy; 2026 2L-PROD - Beatmaking & Studio Services
+    </footer>
+</div>
+
 </body>
 </html>
