@@ -1,12 +1,19 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Video Games — JD Beat | 2L-PROD</title>
+<title>2L-PROD | JD Beat — Beatmaker & Production Musicale</title>
 
-<meta name="description" content="Drill Video Games — Beat produit par JD Beat pour 2L-PROD. Écoute le preview et choisis ta licence MP3, WAV ou Exclusive.">
+<meta name="description" content="2L-PROD par JD Beat — Beats professionnels, production musicale, mixage, mastering et compositions sur mesure.">
+
+<meta property="og:title" content="2L-PROD | JD Beat">
+<meta property="og:description" content="Beats professionnels, production musicale, mixage & mastering.">
+<meta property="og:image" content="https://jdbeat243.github.io/2L-PROD/preview.jpg">
+<meta property="og:url" content="https://jdbeat243.github.io/2L-PROD/">
+<meta property="og:type" content="website">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,222 +23,789 @@
 <style>
 
 :root{
-    --orange:#ff5e00;
-    --orange2:#ff7928;
-    --glow:rgba(255,94,0,.35);
-
-    --bg:#060608;
-    --card:#111116;
-    --card2:#17171d;
-
-    --border:#272730;
-
-    --white:#fff;
-    --text:#f2f2f4;
-    --muted:#92929f;
+--orange:#ff5e00;
+--orange2:#ff7928;
+--glow:rgba(255,94,0,.35);
+--bg:#060608;
+--surface:#111116;
+--surface2:#17171d;
+--border:#272730;
+--text:#f3f3f5;
+--muted:#92929f;
 }
 
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+margin:0;
+padding:0;
+box-sizing:border-box;
 }
 
 html{
-    scroll-behavior:smooth;
+scroll-behavior:smooth;
 }
 
 body{
-    font-family:'Inter',sans-serif;
-    background:
-        radial-gradient(
-            circle at 50% -10%,
-            rgba(255,94,0,.18),
-            transparent 40%
-        ),
-        var(--bg);
-    color:var(--text);
-    line-height:1.6;
+font-family:'Inter',sans-serif;
+background:
+radial-gradient(circle at 50% -10%,rgba(255,94,0,.18),transparent 40%),
+var(--bg);
+color:var(--text);
+line-height:1.6;
+overflow-x:hidden;
 }
 
 a{
-    text-decoration:none;
-    color:inherit;
+text-decoration:none;
+color:inherit;
 }
 
 .container{
-    width:min(1100px,92%);
-    margin:auto;
+width:min(1150px,92%);
+margin:auto;
 }
 
-/* ================= HEADER ================= */
+/* NAVIGATION */
 
 header{
-    position:sticky;
-    top:0;
-    z-index:1000;
-
-    background:rgba(6,6,8,.82);
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.07);
+position:sticky;
+top:0;
+z-index:1000;
+background:rgba(6,6,8,.82);
+backdrop-filter:blur(18px);
+border-bottom:1px solid rgba(255,255,255,.06);
 }
 
 .nav{
-    height:75px;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
+height:75px;
+display:flex;
+align-items:center;
+justify-content:space-between;
 }
 
 .logo{
-    font-family:'Syne',sans-serif;
-    font-size:1.5rem;
-    font-weight:800;
+font-family:'Syne',sans-serif;
+font-size:1.5rem;
+font-weight:800;
 }
 
 .logo span{
-    color:var(--orange);
+color:var(--orange);
 }
 
-.back{
-    color:var(--muted);
-    font-size:.85rem;
-    transition:.3s;
+.nav-links{
+display:flex;
+align-items:center;
+gap:27px;
 }
 
-.back:hover{
-    color:var(--orange);
+.nav-links a{
+font-size:.86rem;
+color:#aaaab3;
+transition:.3s;
 }
 
-/* ================= HERO ================= */
+.nav-links a:hover{
+color:var(--orange);
+}
+
+.nav-contact{
+background:var(--orange);
+color:white!important;
+padding:10px 18px;
+border-radius:10px;
+}
+
+/* HERO */
 
 .hero{
-    padding:70px 0 40px;
-    text-align:center;
+min-height:700px;
+display:flex;
+align-items:center;
+padding:80px 0;
+position:relative;
 }
 
-.label{
-    display:inline-block;
-
-    background:rgba(255,94,0,.09);
-    border:1px solid rgba(255,94,0,.45);
-
-    color:var(--orange);
-
-    padding:7px 15px;
-    border-radius:30px;
-
-    font-size:.72rem;
-    font-weight:800;
-
-    text-transform:uppercase;
-    letter-spacing:1.5px;
-
-    margin-bottom:20px;
+.hero-content{
+max-width:850px;
 }
 
-h1{
-    font-family:'Syne',sans-serif;
-    font-size:clamp(3rem,8vw,6rem);
-    line-height:.95;
-
-    letter-spacing:-4px;
-
-    margin-bottom:15px;
+.tag{
+display:inline-flex;
+align-items:center;
+gap:8px;
+padding:8px 15px;
+border-radius:30px;
+background:rgba(255,94,0,.08);
+border:1px solid rgba(255,94,0,.45);
+color:var(--orange);
+font-size:.75rem;
+font-weight:800;
+letter-spacing:1.5px;
+text-transform:uppercase;
+margin-bottom:25px;
 }
 
-.subtitle{
-    color:var(--muted);
-    font-size:1rem;
+.tag::before{
+content:"";
+width:7px;
+height:7px;
+background:var(--orange);
+border-radius:50%;
+box-shadow:0 0 12px var(--orange);
 }
 
-/* ================= PLAYER ================= */
-
-.player-card{
-    background:
-        linear-gradient(
-            145deg,
-            rgba(255,94,0,.04),
-            transparent
-        ),
-        var(--card);
-
-    border:1px solid var(--border);
-
-    border-radius:28px;
-
-    padding:25px;
-
-    box-shadow:
-        0 30px 80px rgba(0,0,0,.4);
+.hero h1{
+font-family:'Syne',sans-serif;
+font-size:clamp(4rem,10vw,8rem);
+line-height:.85;
+letter-spacing:-6px;
+margin-bottom:30px;
 }
 
-.cover{
-    width:min(650px,100%);
-    aspect-ratio:1/1;
-
-    margin:auto;
-
-    border-radius:22px;
-
-    overflow:hidden;
-
-    background:
-        radial-gradient(
-            circle at center,
-            rgba(255,94,0,.25),
-            transparent 55%
-        ),
-        #09090c;
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
-
-    border:1px solid var(--border);
-
-    margin-bottom:25px;
+.hero h1 span{
+color:var(--orange);
 }
 
-.cover img{
-    width:100%;
-    height:100%;
-    object-fit:cover;
+.hero-description{
+max-width:650px;
+font-size:1.15rem;
+color:var(--muted);
+margin-bottom:35px;
 }
 
-.cover-text{
-    text-align:center;
+.hero-buttons{
+display:flex;
+flex-wrap:wrap;
+gap:14px;
 }
 
-.cover-text strong{
-    display:block;
-
-    font-family:'Syne',sans-serif;
-
-    font-size:clamp(2rem,7vw,4rem);
-
-    letter-spacing:-2px;
+.btn{
+display:inline-flex;
+align-items:center;
+justify-content:center;
+gap:8px;
+padding:15px 22px;
+border-radius:12px;
+background:var(--orange);
+border:1px solid var(--orange);
+color:white;
+font-weight:800;
+transition:.3s;
+box-shadow:0 8px 25px var(--glow);
 }
 
-.cover-text span{
-    color:var(--orange);
-
-    font-weight:800;
-
-    letter-spacing:3px;
+.btn:hover{
+background:var(--orange2);
+transform:translateY(-3px);
 }
 
-/* ================= AUDIO ================= */
-
-.player-title{
-    font-family:'Syne',sans-serif;
-    font-size:1.2rem;
-    margin-bottom:10px;
+.btn-outline{
+background:rgba(255,255,255,.03);
+border-color:var(--border);
+box-shadow:none;
 }
 
-.audio-box{
-    background:#050505;
+.btn-outline:hover{
+border-color:var(--orange);
+background:rgba(255,94,0,.06);
+}
 
-    border:1px solid var(--border
+/* STATS */
+
+.stats{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+border-top:1px solid var(--border);
+border-bottom:1px solid var(--border);
+}
+
+.stat{
+padding:28px 15px;
+text-align:center;
+border-right:1px solid var(--border);
+}
+
+.stat:last-child{
+border-right:none;
+}
+
+.stat strong{
+display:block;
+font-family:'Syne',sans-serif;
+font-size:1.8rem;
+}
+
+.stat span{
+color:var(--muted);
+font-size:.78rem;
+}
+
+/* SECTIONS */
+
+section{
+padding:100px 0;
+}
+
+.section-label{
+color:var(--orange);
+text-transform:uppercase;
+letter-spacing:2px;
+font-size:.72rem;
+font-weight:800;
+margin-bottom:10px;
+}
+
+.section-title{
+font-family:'Syne',sans-serif;
+font-size:clamp(2.2rem,5vw,3.3rem);
+line-height:1;
+}
+
+.section-description{
+color:var(--muted);
+max-width:650px;
+margin-top:15px;
+margin-bottom:40px;
+}
+
+/* BEATS */
+
+.beats-grid{
+display:grid;
+grid-template-columns:repeat(2,1fr);
+gap:25px;
+}
+
+.beat-card{
+background:var(--surface);
+border:1px solid var(--border);
+border-radius:24px;
+padding:20px;
+transition:.3s;
+}
+
+.beat-card:hover{
+transform:translateY(-7px);
+border-color:rgba(255,94,0,.6);
+box-shadow:0 20px 50px rgba(0,0,0,.4);
+}
+
+.video{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:16px;
+background:#000;
+margin-bottom:20px;
+}
+
+.video iframe{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+border:0;
+}
+
+.beat-card h3{
+font-family:'Syne',sans-serif;
+font-size:1.4rem;
+}
+
+.beat-card p{
+color:var(--muted);
+font-size:.9rem;
+}
+
+.audio{
+background:#050505;
+border:1px solid var(--border);
+border-radius:12px;
+padding:8px;
+margin:18px 0;
+}
+
+audio{
+width:100%;
+height:38px;
+}
+
+/* SERVICES */
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.service{
+padding:30px;
+background:var(--surface);
+border:1px solid var(--border);
+border-radius:20px;
+transition:.3s;
+}
+
+.service:hover{
+transform:translateY(-5px);
+border-color:var(--orange);
+}
+
+.service-icon{
+width:48px;
+height:48px;
+display:flex;
+align-items:center;
+justify-content:center;
+background:rgba(255,94,0,.1);
+border:1px solid rgba(255,94,0,.3);
+border-radius:14px;
+font-size:1.3rem;
+margin-bottom:20px;
+}
+
+.service h3{
+font-family:'Syne',sans-serif;
+margin-bottom:10px;
+}
+
+.service p{
+color:var(--muted);
+font-size:.9rem;
+}
+
+/* ABOUT */
+
+.about{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about-box{
+background:
+linear-gradient(145deg,rgba(255,94,0,.12),rgba(255,255,255,.02)),
+var(--surface);
+border:1px solid var(--border);
+border-radius:28px;
+padding:40px;
+}
+
+.about-box h3{
+font-family:'Syne',sans-serif;
+font-size:2rem;
+margin-bottom:20px;
+}
+
+.about-box p{
+color:var(--muted);
+margin-bottom:14px;
+}
+
+.skills{
+display:flex;
+flex-wrap:wrap;
+gap:9px;
+margin-top:25px;
+}
+
+.skill{
+padding:8px 14px;
+background:#191920;
+border:1px solid var(--border);
+border-radius:30px;
+font-size:.8rem;
+color:#b7b7c0;
+}
+
+/* PRICING */
+
+.pricing{
+display:grid;
+grid-template-columns:repeat(3,1fr);
+gap:20px;
+}
+
+.price-card{
+position:relative;
+background:var(--surface);
+border:1px solid var(--border);
+border-radius:22px;
+padding:30px;
+}
+
+.price-card.featured{
+border-color:var(--orange);
+box-shadow:0 0 40px rgba(255,94,0,.1);
+}
+
+.popular{
+position:absolute;
+top:15px;
+right:15px;
+background:var(--orange);
+padding:5px 9px;
+border-radius:20px;
+font-size:.6rem;
+font-weight:800;
+}
+
+.price-card h3{
+font-family:'Syne',sans-serif;
+font-size:1.4rem;
+}
+
+.price{
+font-family:'Syne',sans-serif;
+font-size:1.9rem;
+color:var(--orange);
+margin:12px 0 20px;
+}
+
+.features{
+list-style:none;
+color:var(--muted);
+font-size:.88rem;
+margin-bottom:25px;
+}
+
+.features li{
+margin:9px 0;
+}
+
+.features li::before{
+content:"✓";
+color:var(--orange);
+font-weight:800;
+margin-right:8px;
+}
+
+/* CONTACT */
+
+.contact-box{
+text-align:center;
+padding:70px 30px;
+background:
+radial-gradient(circle at center,rgba(255,94,0,.15),transparent 55%),
+var(--surface);
+border:1px solid var(--border);
+border-radius:30px;
+}
+
+.contact-box h2{
+font-family:'Syne',sans-serif;
+font-size:clamp(2rem,5vw,3.5rem);
+margin-bottom:15px;
+}
+
+.contact-box p{
+max-width:600px;
+margin:auto;
+color:var(--muted);
+margin-bottom:30px;
+}
+
+.socials{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:10px;
+margin-top:25px;
+}
+
+/* FOOTER */
+
+footer{
+border-top:1px solid var(--border);
+padding:40px 0;
+text-align:center;
+color:var(--muted);
+font-size:.8rem;
+}
+
+.footer-logo{
+font-family:'Syne',sans-serif;
+font-size:1.5rem;
+color:white;
+margin-bottom:8px;
+}
+
+.footer-logo span{
+color:var(--orange);
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:58px;
+height:58px;
+background:#25D366;
+border-radius:50%;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:25px;
+z-index:999;
+box-shadow:0 8px 30px rgba(0,0,0,.5);
+transition:.3s;
+}
+
+.whatsapp:hover{
+transform:scale(1.1);
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+.nav-links{
+display:none;
+}
+
+.hero{
+min-height:650px;
+}
+
+.hero h1{
+font-size:4.5rem;
+letter-spacing:-4px;
+}
+
+.stats{
+grid-template-columns:repeat(2,1fr);
+}
+
+.stat:nth-child(2){
+border-right:none;
+}
+
+.stat:nth-child(-n+2){
+border-bottom:1px solid var(--border);
+}
+
+.beats-grid,
+.services-grid,
+.about,
+.pricing{
+grid-template-columns:1fr;
+}
+
+section{
+padding:70px 0;
+}
+
+}
+
+@media(max-width:500px){
+
+.container{
+width:90%;
+}
+
+.hero h1{
+font-size:3.7rem;
+}
+
+.hero-buttons{
+flex-direction:column;
+}
+
+.hero-buttons .btn{
+width:100%;
+}
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- NAVIGATION -->
+
+<header>
+
+<div class="container nav">
+
+<a href="#" class="logo">
+2L-<span>PROD</span>
+</a>
+
+<nav class="nav-links">
+
+<a href="#beats">Beats</a>
+<a href="#services">Services</a>
+<a href="#about">À propos</a>
+<a href="#licences">Licences</a>
+
+<a href="#contact" class="nav-contact">
+Contact
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="container">
+
+<div class="hero-content">
+
+<div class="tag">
+Studio & Production — JD Beat
+</div>
+
+<h1>
+2L-<span>PROD</span>
+</h1>
+
+<p class="hero-description">
+
+Des productions musicales modernes pour donner
+une identité forte à tes projets.
+
+Beats, compositions, mixage et mastering
+par <strong>JD Beat</strong>.
+
+</p>
+
+<div class="hero-buttons">
+
+<a href="#beats" class="btn">
+🎧 Écouter les beats
+</a>
+
+<a
+href="https://wa.me/243844633415?text=Salut%20JD%20Beat%2C%20je%20viens%20du%20site%202L-PROD%20et%20je%20souhaite%20parler%20d%27un%20projet."
+target="_blank"
+class="btn btn-outline">
+
+💬 Démarrer un projet
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="container">
+
+<div class="stats">
+
+<div class="stat">
+<strong>2L</strong>
+<span>Production</span>
+</div>
+
+<div class="stat">
+<strong>JD</strong>
+<span>Beatmaker</span>
+</div>
+
+<div class="stat">
+<strong>24-bit</strong>
+<span>Qualité audio</span>
+</div>
+
+<div class="stat">
+<strong>∞</strong>
+<span>Créativité</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- BEATS -->
+
+<section id="beats">
+
+<div class="container">
+
+<div class="section-label">
+Catalogue
+</div>
+
+<h2 class="section-title">
+Dernières productions
+</h2>
+
+<p class="section-description">
+
+Découvre les productions disponibles chez
+2L-PROD. Écoute les previews et choisis
+la licence qui correspond à ton projet.
+
+</p>
+
+
+<div class="beats-grid">
+
+
+<!-- VIDEO GAMES -->
+
+<div class="beat-card">
+
+<div class="video">
+
+<iframe
+src="https://www.youtube.com/embed/iy49BpDNVLc"
+title="JD Beat — Video Games"
+allowfullscreen>
+</iframe>
+
+</div>
+
+<h3>
+Drill — Video Games
+</h3>
+
+<p>
+Sombre • Percutant • Moderne
+</p>
+
+<div class="audio">
+
+<audio controls controlsList="nodownload">
+
+<source
+src="audio/video-games-tagged.mp3"
+type="audio/mpeg">
+
+</audio>
+
+</div>
+
+<a
+href="beats/video-games.html"
+class="btn">
+
+🎧 Voir le beat & les licences
+
+</a>
+
+</div>
+
+
+<!-- PRO
